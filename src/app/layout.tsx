@@ -124,7 +124,7 @@ export default function RootLayout({
 									telephone: '+20-100-295-0495',
 									contactType: 'خدمة العملاء',
 									areaServed: 'EG',
-									availableLanguage: ['ar', 'en'],
+									availableLanguage: ['ar', 'en', 'fr'],
 								},
 							},
 							{

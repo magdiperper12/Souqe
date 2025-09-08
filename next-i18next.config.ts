@@ -2,7 +2,7 @@ import type { UserConfig } from 'next-i18next';
 
 const nextI18NextConfig: UserConfig = {
 	i18n: {
-		locales: ['en', 'ar'],
+		locales: ['en', 'ar', 'fr'],
 		defaultLocale: 'en',
 	},
 };

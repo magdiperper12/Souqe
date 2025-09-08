@@ -11,7 +11,7 @@ i18n
 	.use(initReactI18next) // لربط i18n بـ React
 	.init({
 		fallbackLng: 'en',
-		supportedLngs: ['en', 'ar'],
+		supportedLngs: ['en', 'ar', 'fr'],
 		debug: process.env.NODE_ENV === 'development',
 		interpolation: {
 			escapeValue: false, // عدم الهروب من القيم (مطلوب في React)
