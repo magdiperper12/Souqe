@@ -1,9 +1,9 @@
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Footer from '../components/layout/Footer';
+import Header from '../components/layout/Header';
 import './globals.css';
 import { Roboto } from 'next/font/google';
 import { Metadata } from 'next';
-import BackToTopButton from '../components/BackToTopButton';
+import BackToTopButton from '../components/theme/BackToTopButton';
 
 const roboto = Roboto({ subsets: ['latin'], weight: '700' });
 

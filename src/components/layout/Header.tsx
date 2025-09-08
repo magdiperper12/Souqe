@@ -5,10 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { TiThMenu } from 'react-icons/ti';
 import { IoClose } from 'react-icons/io5';
-import Dark from './Dark';
-import Lang from './Lang';
+
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import Dark from '../theme/Dark';
+import Lang from '../theme/LanguageSwitcher';
 const Header = () => {
 	const { t, i18n } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
