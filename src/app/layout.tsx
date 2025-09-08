@@ -8,21 +8,21 @@ import BackToTopButton from '../components/theme/BackToTopButton';
 const roboto = Roboto({ subsets: ['latin'], weight: '700' });
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://abonawas.com'),
-	title: 'أصدار جديد - كود جديد | Abo Nawas The Leading Metalwork Wrought Iron',
+	metadataBase: new URL('https://souqexample.com'),
+	title: 'Souq Market | أفضل تسوق عبر الإنترنت',
 	description:
-		'أبو نواس - خبرة 35 سنة في تصميم وتصنيع البوابات الحديدية، درابزين السلالم، الأسوار، والهياكل المعدنية. نقدم حلول حدادة متينة وجميلة تناسب المنازل والفلل والمصانع. نخدم كفر الشيخ وطنطا والدلتا.',
+		'Souq Market - اكتشف أفضل المنتجات بأسعار تنافسية، من الإلكترونيات، الملابس، مستلزمات المنزل، وأكثر. التسوق السهل والآمن مع توصيل سريع لجميع المدن.',
 	openGraph: {
-		title: 'أبو نواس حديد | Abo Nawas Iron Designs',
+		title: 'Souq Market | أفضل تسوق عبر الإنترنت',
 		description:
-			'اكتشف حلول "أبو نواس" المتكاملة في أعمال الحدادة والكريتال منذ عام 1987 — تصميم وتصنيع بوابات حديد فاخرة، درابزين سلالم، شبابيك حماية، مظلات سيارات، برجولات حدائق، شعارات معدنية، فواصل زخرفية، وسلالم حديد.',
+			'تسوق من Souq Market واستمتع بمجموعة واسعة من المنتجات: إلكترونيات، ملابس، مستلزمات المنزل، هدايا، وأكثر. عروض يومية وأسعار تنافسية.',
 		type: 'website',
 		locale: 'ar_EG',
-		url: 'https://abonawas.com/',
+		url: 'https://souqexample.com/',
 		images: [
 			{
-				url: 'https://abonawas.com/favicon.png',
-				alt: 'أبو نواس - حدادة وكريتال منذ 1987',
+				url: 'https://souqexample.com/favicon.png',
+				alt: 'Souq Market - أفضل تسوق عبر الإنترنت',
 				width: 800,
 				height: 600,
 			},
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'أبو نواس حديد | Abo Nawas Iron Designs',
+		title: 'Souq Market | أفضل تسوق عبر الإنترنت',
 		description:
-			'تأسست ورشة الشرنوبي عام 1987 لتقديم أفضل أعمال الحدادة والكريتال. خدماتنا تشمل تصنيع البوابات الحديدية، السلالم، الأسوار، الشبابيك، المظلات، الهياكل المعدنية، والديكورات الحديثة.',
+			'Souq Market يوفر لك تجربة تسوق مميزة: منتجات عالية الجودة، عروض رائعة، وخدمة عملاء ممتازة. توصيل سريع وآمن لجميع المدن.',
 		images: ['/favicon.png'],
 	},
 	icons: {
@@ -60,7 +60,7 @@ export default function RootLayout({
 				/>
 				<meta
 					name='author'
-					content='أبو نواس | Abo Nawas'
+					content='Souq Market'
 				/>
 				<meta
 					name='robots'
@@ -68,15 +68,15 @@ export default function RootLayout({
 				/>
 				<meta
 					name='application-name'
-					content='أبو نواس لأعمال الحدادة والكريتال'
+					content='Souq Market | أفضل تسوق عبر الإنترنت'
 				/>
 				<meta
 					name='image'
-					content='https://abonawas.com/favicon.png'
+					content='https://souqexample.com/favicon.png'
 				/>
 				<link
 					rel='canonical'
-					href='https://abonawas.com/'
+					href='https://souqexample.com/'
 				/>
 
 				{/* Favicon */}
@@ -104,24 +104,24 @@ export default function RootLayout({
 							{
 								'@context': 'https://schema.org',
 								'@type': 'Organization',
-								name: 'أبو نواس | Abo Nawas - Metalwork Since 1987',
-								url: 'https://abonawas.com/',
-								logo: 'https://abonawas.com/favicon.png',
+								name: 'Souq Market',
+								url: 'https://souqexample.com/',
+								logo: 'https://souqexample.com/favicon.png',
 								sameAs: [
-									'https://www.facebook.com/people/أبو-نواس-للتجارة-والمقاولات-والتشكيلات-المعدنية/100063877210927/',
-									'https://wa.me/201002950495',
+									'https://www.facebook.com/souqmarket',
+									'https://www.instagram.com/souqmarket',
 								],
 								description:
-									'ورشة أبو نواس تأسست عام 1987 على يد الحاج عبد السند الشرنوبي...',
+									'Souq Market هو السوق الإلكتروني الرائد للتسوق عبر الإنترنت، يقدم منتجات متنوعة بأسعار تنافسية مع خدمة عملاء ممتازة.',
 								address: {
 									'@type': 'PostalAddress',
-									addressLocality: 'كفر الشيخ',
-									addressRegion: 'دلتا مصر',
+									addressLocality: 'القاهرة',
+									addressRegion: 'مصر',
 									addressCountry: 'EG',
 								},
 								contactPoint: {
 									'@type': 'ContactPoint',
-									telephone: '+20-100-295-0495',
+									telephone: '+20-100-000-0000',
 									contactType: 'خدمة العملاء',
 									areaServed: 'EG',
 									availableLanguage: ['ar', 'en', 'fr'],
@@ -130,22 +130,22 @@ export default function RootLayout({
 							{
 								'@context': 'https://schema.org',
 								'@type': 'WebSite',
-								url: 'https://abonawas.com/',
-								name: 'أبو نواس | Abo Nawas - Metalwork Since 1987',
+								url: 'https://souqexample.com/',
+								name: 'Souq Market',
 								potentialAction: {
 									'@type': 'SearchAction',
-									target: 'https://abonawas.com/?s={search_term_string}',
+									target: 'https://souqexample.com/?s={search_term_string}',
 									'query-input': 'required name=search_term_string',
 								},
 							},
 							{
 								'@context': 'https://schema.org',
 								'@type': 'ImageObject',
-								contentUrl: 'https://abonawas.com/favicon.png',
-								url: 'https://abonawas.com/favicon.png',
+								contentUrl: 'https://souqexample.com/favicon.png',
+								url: 'https://souqexample.com/favicon.png',
 								width: 800,
 								height: 600,
-								name: 'شعار أبو نواس',
+								name: 'شعار Souq Market',
 							},
 						]),
 					}}
