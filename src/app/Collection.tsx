@@ -1,10 +1,18 @@
 'use client';
 
 import React from 'react';
+import HeroImage from '../components/Hero';
 
 function Collection() {
 	return (
-		<main className=' pt-32 pb-28  overflow-x-hidden'>
+		<main className='  overflow-x-hidden'>
+			<HeroImage
+				image='/image/shop4.jpg'
+				name='تخفيضات نهاية الموسم '
+				item1='خصومات تصل إلى 50% على جميع المنتجات'
+				item2='تسوق الآن'
+				item3='egy'
+			/>
 			<div className='h-screen'></div>
 		</main>
 	);

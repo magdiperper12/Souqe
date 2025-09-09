@@ -10,6 +10,14 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import Dark from '../theme/Dark';
 import Lang from '../theme/LanguageSwitcher';
+import {
+	FaFacebook,
+	FaTiktok,
+	FaTwitter,
+	FaUser,
+	FaYoutube,
+} from 'react-icons/fa';
+import { CgShoppingCart } from 'react-icons/cg';
 const Header = () => {
 	const { t, i18n } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +25,41 @@ const Header = () => {
 
 	const navLinks = [
 		{ name: t('Home'), href: '/' },
-		{ name: t('Projects'), href: '/Projects' },
-		{ name: t('About'), href: '/About' },
-		{ name: t('contact'), href: '/Contact' },
+		{ name: t('Products'), href: '/pages/products' },
+		{ name: t('About'), href: '/pages/about' },
+		{ name: t('Contact'), href: '/pages/contact' },
 	];
 	return (
 		<header className='backdrop-blur-lg dark:bg-black/10 bg-white/10  fixed   w-full pb-2   text-darkprimary  dark:text-white  shadow-lg'>
-			<div className='mx-auto flex h-16  pt-1 items-center justify-between px-4 sm:px-6 lg:px-8'>
+			<div className='fixed top-0 bg-blue-100 dark:bg-blue-950 px-4 lg:px-8 text-blue-950 dark:text-white w-full flex justify-end md:justify-between items-center'>
+				<div className='hidden  md:flex justify-center items-center gap-6 text-xl'>
+					<Link
+						href={'https://www.facebook.com/'}
+						target='_blanck'>
+						<FaFacebook />
+					</Link>
+					<Link
+						href={'https://www.twitter.com/'}
+						target='_blanck'>
+						<FaTwitter />
+					</Link>
+					<Link
+						href={'https://www.youtube.com/'}
+						target='_blanck'>
+						<FaYoutube />
+					</Link>
+					<Link
+						href={'https://www.tiktok.com/'}
+						target='_blanck'>
+						<FaTiktok />
+					</Link>
+				</div>
+				<div className='flex justify-center items-center gap-3 md:gap-5'>
+					<Lang /> <Dark />
+				</div>
+			</div>
+
+			<div className='mx-auto mt-10 flex h-16  pt-1 items-center justify-between px-4 sm:px-6 lg:px-8'>
 				<Link href='/'>
 					<Image
 						src='/favicon.png'
@@ -52,8 +88,10 @@ const Header = () => {
 
 				{/* Right actions */}
 				<div className='flex items-center gap-4'>
-					<Dark />
-					<Lang />
+					<div className='flex justify-center items-center gap-5 text-xl'>
+						<CgShoppingCart />
+						<FaUser />
+					</div>
 					{/* Mobile Menu Button */}
 					<button
 						className='lg:hidden  p-2 text-darkprimary text-2xl dark:text-primary'
