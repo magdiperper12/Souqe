@@ -37,7 +37,7 @@ export default function BuyPage() {
 	const handleBuy = () => {
 		if (product) {
 			addPurchase(product);
-			router.push('/profile'); // ممكن توجه لصفحة المشتريات أو البروفايل
+			router.push('/purchases');
 		}
 	};
 
