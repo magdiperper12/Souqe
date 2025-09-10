@@ -2,6 +2,7 @@
 
 import React from 'react';
 import HeroImage from '../components/Hero';
+import ProductContainer from '../components/ProductContainer';
 
 function Collection() {
 	return (
@@ -13,7 +14,7 @@ function Collection() {
 				item2='تسوق الآن'
 				item3='egy'
 			/>
-			<div className='h-screen'></div>
+			<ProductContainer />
 		</main>
 	);
 }

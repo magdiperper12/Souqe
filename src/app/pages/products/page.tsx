@@ -1,5 +1,5 @@
-import Card from '@/src/components/Card';
 import HeroImage from '@/src/components/Hero';
+import ProductContainer from '@/src/components/ProductContainer';
 import React from 'react';
 
 const Products = () => {
@@ -12,6 +12,7 @@ const Products = () => {
 				item2='masre'
 				item3='egy'
 			/>
+			<ProductContainer />
 		</div>
 	);
 };
