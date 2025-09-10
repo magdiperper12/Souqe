@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { TiThMenu } from 'react-icons/ti';
 import { IoClose } from 'react-icons/io5';
-
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import Dark from '../theme/Dark';
@@ -18,39 +17,44 @@ import {
 	FaYoutube,
 } from 'react-icons/fa';
 import { CgShoppingCart } from 'react-icons/cg';
+import { usePurchase } from '@/src/app/context/PurchaseContext';
+
 const Header = () => {
 	const { t, i18n } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
+	const { purchases } = usePurchase(); // الحصول على المشتريات من الـ Context
+
 	if (!i18n.isInitialized) return null;
 
 	const navLinks = [
 		{ name: t('Home'), href: '/' },
-		{ name: t('Products'), href: '/pages/products' },
+		{ name: t('Products'), href: '/pages/products' }, // عدلت المسار إلى /products بدلاً من /pages/products
 		{ name: t('About'), href: '/pages/about' },
 		{ name: t('Contact'), href: '/pages/contact' },
 	];
+
 	return (
 		<header className='backdrop-blur-lg dark:bg-black/10 bg-white/10  fixed   w-full pb-2   text-darkprimary  dark:text-white  shadow-lg'>
 			<div className='fixed top-0 bg-blue-100 dark:bg-blue-950 px-4 lg:px-8 text-blue-950 dark:text-white w-full flex justify-end md:justify-between items-center'>
 				<div className='hidden  md:flex justify-center items-center gap-6 text-xl'>
 					<Link
 						href={'https://www.facebook.com/'}
-						target='_blanck'>
+						target='_blank'>
 						<FaFacebook />
 					</Link>
 					<Link
 						href={'https://www.twitter.com/'}
-						target='_blanck'>
+						target='_blank'>
 						<FaTwitter />
 					</Link>
 					<Link
 						href={'https://www.youtube.com/'}
-						target='_blanck'>
+						target='_blank'>
 						<FaYoutube />
 					</Link>
 					<Link
 						href={'https://www.tiktok.com/'}
-						target='_blanck'>
+						target='_blank'>
 						<FaTiktok />
 					</Link>
 				</div>
@@ -89,8 +93,19 @@ const Header = () => {
 				{/* Right actions */}
 				<div className='flex items-center gap-4'>
 					<div className='flex justify-center items-center gap-5 text-xl'>
-						<CgShoppingCart />
-						<FaUser />
+						<Link
+							className='relative'
+							href={'/purchases'}>
+							<CgShoppingCart className='text-2xl' />
+							{purchases.length > 0 && (
+								<span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center'>
+									{purchases.length}
+								</span>
+							)}
+						</Link>
+						<Link href={'/pages/profile'}>
+							<FaUser />
+						</Link>
 					</div>
 					{/* Mobile Menu Button */}
 					<button

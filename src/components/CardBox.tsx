@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
-interface producttype {
+export interface ProductType {
 	id: number;
 	image: string;
 	title: string;
@@ -8,6 +10,7 @@ interface producttype {
 	price: number;
 	category: string;
 }
+
 const CardBox = ({
 	id,
 	image,
@@ -15,12 +18,14 @@ const CardBox = ({
 	description,
 	price,
 	category,
-}: producttype) => {
+}: ProductType) => {
+	const router = useRouter();
+
 	return (
 		<div
 			key={id}
-			className='rounded-2xl relative shadow-md bg-gray-100 dark:bg-gray-800 p-4 flex flex-col hover:scale-105 transition-transform'>
-			<div className='absolute top-0 right-0  bg-gray-200 px-2 py-1 rounded-lg text-gray-800'>
+			className='rounded-2xl relative shadow-md bg-gray-100 dark:bg-gray-800 p-4 flex flex-col hover:bg-blue-50 hover:shadow-lg hover:shadow-blue-100 transition-all duration-200'>
+			<div className='absolute top-0 right-0 bg-gray-200 px-2 py-1 rounded-lg text-gray-800'>
 				{category}
 			</div>
 			<img
@@ -34,7 +39,9 @@ const CardBox = ({
 			</p>
 			<div className='mt-auto flex justify-between items-center pt-4'>
 				<span className='font-bold text-xl'>${price}</span>
-				<button className='bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700'>
+				<button
+					onClick={() => router.push(`/buy/${id}`)}
+					className='bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700'>
 					Buy
 				</button>
 			</div>

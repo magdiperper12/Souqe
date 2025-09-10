@@ -4,6 +4,7 @@ import './globals.css';
 import { Roboto } from 'next/font/google';
 import { Metadata } from 'next';
 import BackToTopButton from '../components/theme/BackToTopButton';
+import { PurchaseProvider } from './context/PurchaseContext';
 
 const roboto = Roboto({ subsets: ['latin'], weight: '700' });
 
@@ -154,12 +155,15 @@ export default function RootLayout({
 
 			<body
 				className={`bg-gradient-to-r relative ${roboto.className} text-darkprimary dark:text-primary custom-scroll overflow-x-hidden bg-primary dark:bg-darkprimary`}>
-				<div className='fixed top-0 z-50'>
-					<Header />
-				</div>
-				{children}
-				<Footer />
-				<BackToTopButton />
+				<PurchaseProvider>
+					{' '}
+					<div className='fixed top-0 z-50'>
+						<Header />
+					</div>
+					{children}
+					<Footer />
+					<BackToTopButton />{' '}
+				</PurchaseProvider>
 			</body>
 		</html>
 	);
