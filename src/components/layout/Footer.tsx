@@ -30,10 +30,10 @@ const Footer = () => {
 					<h2 className='text-2xl font-bold mb-4 text-darkthird dark:text-third'>
 						{t('footerTitle')}
 					</h2>
-					<p className='text-sm leading-6 text-darkprimary dark:text-darkforth'>
+					<div className='text-sm leading-6 text-darkprimary dark:text-darkforth'>
 						<span className='text-darkthird dark:text-third'>TOKEN</span>{' '}
 						{t('footerDesc')}
-					</p>
+					</div>
 				</div>
 
 				{/* Quick Links */}

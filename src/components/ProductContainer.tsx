@@ -39,9 +39,9 @@ const ProductContainer = () => {
 
 	if (loading)
 		return (
-			<p className='text-center'>
+			<div className='text-center'>
 				<Loading />
-			</p>
+			</div>
 		);
 
 	// فلترة المنتجات بناءً على البحث أو التصنيف
