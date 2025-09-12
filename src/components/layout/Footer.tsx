@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa6';
 
 const Footer = () => {
 	const { t } = useTranslation();
@@ -83,22 +84,33 @@ const Footer = () => {
 						<a
 							href='#'
 							className='hover:text-darksecoundry transition-colors'>
-							<FaFacebookF />
+							<FaFacebook className='text-blue-600' />
 						</a>
 						<a
 							href='#'
 							className='hover:text-sky-400 transition-colors'>
-							<FaTwitter />
+							<FaTwitter className='text-blue-500' />
 						</a>
 						<a
 							href='#'
 							className='hover:text-blue-700 transition-colors'>
-							<FaLinkedinIn />
+							<FaLinkedinIn className='text-blue-600' />
 						</a>
 						<a
 							href='#'
+							className='hover:text-blue-700 transition-colors'>
+							<FaTiktok className='text-black dark:bg-white dark:rounded-lg dark:p-1' />
+						</a>
+
+						<a
+							href='#'
 							className='hover:text-gray-500 transition-colors'>
-							<FaGithub />
+							<FaGithub className='text-black dark:bg-white dark:rounded-lg dark:p-1' />
+						</a>
+						<a
+							href='#'
+							className='hover:text-red-700 transition-colors'>
+							<FaYoutube className='text-red-600 dark:text-red-500' />
 						</a>
 					</div>
 				</div>
@@ -107,7 +119,7 @@ const Footer = () => {
 			<div className='text-center text-sm border-t text-darkprimary dark:text-darkforth border-secoundry dark:border-darksecoundry pt-6'>
 				&copy; 2025
 				<Link
-					href={'https://www.linkedin.com/in/magdi-perper-95b132343/'}
+					href={'https://web.facebook.com/magdi.perper.9'}
 					className='text-darkthird dark:text-third px-1'>
 					Magdi
 				</Link>

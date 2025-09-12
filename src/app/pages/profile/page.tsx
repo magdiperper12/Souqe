@@ -4,6 +4,7 @@ import { usePurchase } from '../../context/PurchaseContext';
 import { useTranslation } from 'react-i18next';
 import Lang from '@/src/components/theme/LanguageSwitcher';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProfilePage() {
 	const { t } = useTranslation();
@@ -40,7 +41,7 @@ export default function ProfilePage() {
 				</p>
 				<p className='text-gray-500 text-sm mt-1'>{t('userLocation')}</p>
 			</div>
-			<div className='flex justify-center space-x-6 border-b mt-8 pb-2'>
+			<div className='flex justify-center  gap-6 border-b mt-8 pb-2'>
 				<button
 					onClick={() => setActiveTab('purchases')}
 					className={`pb-1 font-semibold ${
@@ -91,6 +92,12 @@ export default function ProfilePage() {
 								))}
 							</div>
 						)}
+						<Link
+							href={'/pages/price'}
+							className='block w-2/3 bg-darksecoundry p-2 hover:bg-black rounded-lg text-white text-xl text-center m-auto my-3'>
+							{' '}
+							{t('buy')}
+						</Link>
 					</>
 				) : (
 					<>
