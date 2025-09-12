@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { usePurchase } from '../../context/PurchaseContext';
 import { useTranslation } from 'react-i18next';
-import Dark from '@/src/components/theme/Dark';
 import Lang from '@/src/components/theme/LanguageSwitcher';
 import Image from 'next/image';
 
@@ -15,7 +14,6 @@ export default function ProfilePage() {
 
 	return (
 		<div className='max-w-5xl mx-auto py-20 mt-20'>
-			{/* Cover Image */}
 			<div className='relative h-60  px-3'>
 				<img
 					src='/image/shop1.jpg'
@@ -33,7 +31,6 @@ export default function ProfilePage() {
 				</div>
 			</div>
 
-			{/* User Info */}
 			<div className='mt-20 text-center'>
 				<h1 className='text-3xl font-bold text-gray-800 dark:text-gray-100'>
 					{t('userName')}
@@ -43,8 +40,6 @@ export default function ProfilePage() {
 				</p>
 				<p className='text-gray-500 text-sm mt-1'>{t('userLocation')}</p>
 			</div>
-
-			{/* Tabs */}
 			<div className='flex justify-center space-x-6 border-b mt-8 pb-2'>
 				<button
 					onClick={() => setActiveTab('purchases')}
@@ -66,7 +61,6 @@ export default function ProfilePage() {
 				</button>
 			</div>
 
-			{/* Tab Content */}
 			<div className='mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6'>
 				{activeTab === 'purchases' ? (
 					<>
@@ -102,7 +96,7 @@ export default function ProfilePage() {
 					<>
 						<h2 className='text-xl font-semibold mb-4'>{t('settings')}</h2>
 						<div className='flex justify-center items-center gap-3 md:gap-5'>
-							<Lang /> {/*<Dark /> */}
+							<Lang />
 						</div>
 					</>
 				)}

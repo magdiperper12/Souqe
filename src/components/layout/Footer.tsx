@@ -20,7 +20,6 @@ const Footer = () => {
 	return (
 		<footer className='bg-blue-50 py-16 dark:bg-darkprimary text-darksecoundry dark:text-third pt-12 pb-6 px-6 md:px-16'>
 			<div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10'>
-				{/* Company Info */}
 				<div>
 					<div className='text-4xl mb-4 font-extrabold bg-gradient-to-tr from-darkprimary to-darkthird dark:from-darksecoundry dark:to-darkforth  bg-clip-text text-transparent'>
 						{t('Souq')}
@@ -54,8 +53,6 @@ const Footer = () => {
 						</ul>
 					</div>
 
-					{/* Resources */}
-
 					<div>
 						<h3 className='text-lg font-semibold mb-4 text-darkprimary dark:text-primary'>
 							{t('quickLinks')}
@@ -78,7 +75,6 @@ const Footer = () => {
 						</ul>
 					</div>
 				</div>
-				{/* Socials */}
 				<div>
 					<h3 className='text-lg font-semibold mb-4 text-darkprimary dark:text-primary'>
 						{t('Contact')}

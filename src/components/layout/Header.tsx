@@ -22,13 +22,13 @@ import { usePurchase } from '@/src/app/context/PurchaseContext';
 const Header = () => {
 	const { t, i18n } = useTranslation();
 	const [isOpen, setIsOpen] = useState(false);
-	const { purchases } = usePurchase(); // الحصول على المشتريات من الـ Context
+	const { purchases } = usePurchase();
 
 	if (!i18n.isInitialized) return null;
 
 	const navLinks = [
 		{ name: t('Home'), href: '/' },
-		{ name: t('Productsspecial'), href: '/pages/products' }, // عدلت المسار إلى /products بدلاً من /pages/products
+		{ name: t('Productsspecial'), href: '/pages/products' },
 		{ name: t('About'), href: '/pages/about' },
 		{ name: t('Contact'), href: '/pages/contact' },
 	];
@@ -69,7 +69,7 @@ const Header = () => {
 						{t('Souq')}
 					</div>
 				</Link>
-				{/* Desktop Navigation */}
+				{/* large screen Navigation */}
 				<nav className='hidden lg:flex items-center gap-6  font-bold text-xl'>
 					{navLinks.map((link, i) => (
 						<motion.div
@@ -86,7 +86,6 @@ const Header = () => {
 					))}
 				</nav>
 
-				{/* Right actions */}
 				<div className='flex items-center gap-4'>
 					<div className='flex justify-center items-center gap-5 text-xl'>
 						<Link
@@ -112,7 +111,7 @@ const Header = () => {
 							/>
 						</Link>
 					</div>
-					{/* Mobile Menu Button */}
+					{/* Mobile Menu Close , open  Button */}
 					<button
 						className='lg:hidden  p-2 text-darkprimary text-2xl dark:text-primary'
 						onClick={() => setIsOpen(!isOpen)}>

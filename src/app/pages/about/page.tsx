@@ -18,7 +18,6 @@ const AboutPage = () => {
 			/>
 
 			<div className='bg-Background text-darkprimary dark:text-darkforth lg:mt-16 dark:bg-darkBackground dark:text-darkPrimary dark:text-darkforthTextColors py-20 space-y-20'>
-				{/* Section: Mission */}
 				<section className='text-center space-y-10'>
 					<h1 className='text-3xl md:text-5xl font-bold '>{t('ourMessage')}</h1>
 					<div className='flex justify-center'>
@@ -35,7 +34,6 @@ const AboutPage = () => {
 					</p>
 				</section>
 
-				{/* Section: Vision, Goals, Sustainability */}
 				<section className='grid grid-cols-1 md:grid-cols-3 gap-10 text-center px-4 md:px-16 lg:px-20'>
 					{[
 						{
@@ -83,7 +81,6 @@ const AboutPage = () => {
 					))}
 				</section>
 
-				{/* Section: Stats */}
 				<section className='grid grid-cols-1 md:grid-cols-3 gap-10 text-center px-4 md:px-16 lg:px-20'>
 					{[
 						{

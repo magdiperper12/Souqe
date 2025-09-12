@@ -15,11 +15,30 @@ const Contact = () => {
 				item2={t('Contact')}
 				item3={t('shopNow')}
 			/>
-			<div className='bg-Background dark:bg-darkBackground min-h-screen py-12 mt-16'>
-				<div className='max-w-7xl mx-auto px-3 md:px-6'>
+
+			<div className='bg-Background dark:bg-darkBackground min-h-screen py-12'>
+				<section className='flex justify-center items-center mb-16 mt-4 '>
+					<a
+						href='https://wa.me/qr/F7VHAJTVW7SBI1'
+						target='_blank'
+						rel='noreferrer'
+						className='text-main text-lg mt-4 block text-center'>
+						<div className='border-4 border-main p-4 rounded-md dark:border-third'>
+							<h3 className='text-center text-2xl font-semibold mb-4'>
+								Scan Me
+							</h3>
+							<img
+								src={'/image/QRimage.JPG'}
+								alt='WhatsApp QR Code'
+								className='w-48 h-48 object-contain'
+							/>
+						</div>
+					</a>
+				</section>
+				<div className='max-w-7xl mx-auto px-6'>
 					<div className='mt-12 grid grid-cols-1 md:grid-cols-2 gap-12'>
 						{/* Contact Info */}
-						<div className='bg-white dark:bg-transparent dark:border-2 border-forth p-8 shadow-lg rounded-lg'>
+						<div className='bg-white dark:bg-transparent dark:border-2 border-forth p-4 md:p-8 shadow-lg rounded-lg'>
 							<h3 className='text-2xl font-semibold text-PrimaryTextColors dark:text-darkPrimaryTextColors mb-4'>
 								{t('contactInfo')}
 							</h3>
@@ -29,7 +48,7 @@ const Contact = () => {
 									<a
 										href='tel:+201033903220'
 										className='text-darksecoundry hover:text-darkprimary dark:text-third dark:hover:text-secoundry'>
-										01033903220
+										01021589478
 									</a>
 								</li>
 								<li className='flex items-center gap-2'>
@@ -68,7 +87,7 @@ const Contact = () => {
 												className='text-green-600 border-2 border-green-600 hover:bg-green-600 hover:text-white p-2 rounded-md transition-colors duration-300'
 											/>
 										),
-										href: 'https://api.whatsapp.com/send/?phone=%2B201033903220&text=مرحبا، أريد الاستفسار عن منتجاتكم&type=phone_number&app_absent=0',
+										href: 'https://api.whatsapp.com/send/?phone=%01021589478&text=مرحبا، أريد الاستفسار عن منتجاتكم&type=phone_number&app_absent=0',
 										label: 'Whatsapp',
 									},
 								].map(({ icon, href, label }) => (

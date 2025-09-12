@@ -6,7 +6,6 @@ import { FaArrowUp } from 'react-icons/fa';
 const BackToTopButton = () => {
 	const [isVisible, setIsVisible] = useState(false);
 
-	// Show/hide button on scroll
 	useEffect(() => {
 		const toggleVisibility = () => {
 			if (window.scrollY > 200) {
