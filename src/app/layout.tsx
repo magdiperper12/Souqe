@@ -53,7 +53,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='ar'>
+		<html lang='fr'>
 			<head>
 				<meta
 					name='viewport'
@@ -156,13 +156,12 @@ export default function RootLayout({
 			<body
 				className={`bg-gradient-to-r relative ${roboto.className} text-darkprimary dark:text-primary custom-scroll overflow-x-hidden bg-primary dark:bg-darkprimary`}>
 				<PurchaseProvider>
-					{' '}
 					<div className='fixed top-0 z-50'>
 						<Header />
 					</div>
 					{children}
 					<Footer />
-					<BackToTopButton />{' '}
+					<BackToTopButton />
 				</PurchaseProvider>
 			</body>
 		</html>

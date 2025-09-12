@@ -24,8 +24,8 @@ const CardBox = ({
 	return (
 		<div
 			key={id}
-			className='rounded-2xl relative shadow-md bg-gray-100 dark:bg-gray-800 p-4 flex flex-col hover:bg-blue-50 hover:shadow-lg hover:shadow-blue-100 transition-all duration-200'>
-			<div className='absolute top-0 right-0 bg-gray-200 px-2 py-1 rounded-lg text-gray-800'>
+			className='rounded-2xl relative shadow-md bg-gray-100 dark:bg-gray-800 p-4 flex flex-col hover:bg-blue-50 hover:shadow-lg hover:shadow-blue-100 dark:hover:shadow-gray-800 transition-all duration-200'>
+			<div className='absolute -top-2 -right-2 bg-blue-100 dark:bg-blue-200 px-2 py-1 rounded-lg text-gray-800'>
 				{category}
 			</div>
 			<img
@@ -41,7 +41,7 @@ const CardBox = ({
 				<span className='font-bold text-xl'>${price}</span>
 				<button
 					onClick={() => router.push(`/buy/${id}`)}
-					className='bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700'>
+					className='bg-darksecoundry text-white px-4 py-2 rounded-lg hover:bg-darkprimary'>
 					Buy
 				</button>
 			</div>

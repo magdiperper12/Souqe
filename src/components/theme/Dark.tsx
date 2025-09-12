@@ -20,10 +20,10 @@ const Dark: React.FC = () => {
 				onClick={toggleDarkMode}>
 				<div
 					className={`w-8 h-8 rounded-full flex justify-center items-center ${
-						isDarkMode ? 'bg-yellow-50' : 'bg-darkprimary'
+						isDarkMode ? 'bg-darkforth' : 'bg-darkprimary'
 					}`}>
 					{isDarkMode ? (
-						<FaSun className='text-red-600 ' />
+						<FaSun className='text-darksecoundry ' />
 					) : (
 						<FaMoon className='text-darkforth' />
 					)}

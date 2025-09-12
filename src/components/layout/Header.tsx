@@ -28,7 +28,7 @@ const Header = () => {
 
 	const navLinks = [
 		{ name: t('Home'), href: '/' },
-		{ name: t('Products'), href: '/pages/products' }, // عدلت المسار إلى /products بدلاً من /pages/products
+		{ name: t('Productsspecial'), href: '/pages/products' }, // عدلت المسار إلى /products بدلاً من /pages/products
 		{ name: t('About'), href: '/pages/about' },
 		{ name: t('Contact'), href: '/pages/contact' },
 	];
@@ -40,22 +40,22 @@ const Header = () => {
 					<Link
 						href={'https://www.facebook.com/'}
 						target='_blank'>
-						<FaFacebook />
+						<FaFacebook className='text-blue-600' />
 					</Link>
 					<Link
 						href={'https://www.twitter.com/'}
 						target='_blank'>
-						<FaTwitter />
+						<FaTwitter className='text-blue-500' />
 					</Link>
 					<Link
 						href={'https://www.youtube.com/'}
 						target='_blank'>
-						<FaYoutube />
+						<FaYoutube className='text-red-600 dark:text-red-500' />
 					</Link>
 					<Link
 						href={'https://www.tiktok.com/'}
 						target='_blank'>
-						<FaTiktok />
+						<FaTiktok className='text-black dark:bg-white dark:rounded-lg dark:p-1' />
 					</Link>
 				</div>
 				<div className='flex justify-center items-center gap-3 md:gap-5'>
@@ -65,13 +65,9 @@ const Header = () => {
 
 			<div className='mx-auto mt-10 flex h-16  pt-1 items-center justify-between px-4 sm:px-6 lg:px-8'>
 				<Link href='/'>
-					<Image
-						src='/favicon.png'
-						alt='شركة كودا - تطوير البرمجيات والذكاء الاصطناعي'
-						width={50}
-						height={50}
-						priority
-					/>
+					<div className='text-4xl font-extrabold bg-gradient-to-tr from-darkprimary to-darkthird dark:from-darksecoundry dark:to-darkforth bg-clip-text text-transparent'>
+						{t('Souq')}
+					</div>
 				</Link>
 				{/* Desktop Navigation */}
 				<nav className='hidden lg:flex items-center gap-6  font-bold text-xl'>
@@ -96,7 +92,10 @@ const Header = () => {
 						<Link
 							className='relative'
 							href={'/purchases'}>
-							<CgShoppingCart className='text-2xl' />
+							<div className='w-10 h-10  flex justify-center items-center rounded-full border-4 border-white shadow-lg'>
+								<CgShoppingCart className='text-xl ' />
+							</div>
+
 							{purchases.length > 0 && (
 								<span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center'>
 									{purchases.length}
@@ -104,7 +103,13 @@ const Header = () => {
 							)}
 						</Link>
 						<Link href={'/pages/profile'}>
-							<FaUser />
+							<Image
+								width={40}
+								height={40}
+								src='/image/magdi.png'
+								alt='Profile'
+								className='w-10 h-10 rounded-full border-4 border-white shadow-lg object-cover'
+							/>
 						</Link>
 					</div>
 					{/* Mobile Menu Button */}
@@ -132,7 +137,7 @@ const Header = () => {
 						animate={{ opacity: 1, height: 'auto' }}
 						exit={{ opacity: 0, height: 0 }}
 						transition={{ duration: 0.3 }}
-						className='fixed z-50  w-full left-0 top-0 lg:hidden px-4 pt-4 pb-6 space-y-10 bg-secoundry dark:bg-darkprimary min-h-screen'>
+						className='fixed z-50  w-full left-0 top-0 lg:hidden px-4 pt-4 pb-6 space-y-10 bg-primary dark:bg-darkprimary min-h-screen'>
 						<button
 							className='lg:hidden fixed right-4 top-4  p-2 text-darkprimary text-3xl dark:text-primary'
 							onClick={() => setIsOpen(!isOpen)}>
@@ -154,6 +159,7 @@ const Header = () => {
 								transition={{ duration: 0.3, delay: 0.2 * i }}
 								className='ps-5'>
 								<Link
+									onClick={() => setIsOpen(!isOpen)}
 									className='hover:text-third transition focus:text-darkthird text-2xl font-bold'
 									href={link.href}>
 									{link.name}

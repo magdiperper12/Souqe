@@ -45,14 +45,14 @@ export default function BuyPage() {
 	if (!product) return notFound();
 
 	return (
-		<main className='container mx-auto p-8 flex justify-center'>
-			<div className='max-w-md w-full bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg'>
+		<main className='container mx-auto  p-8 flex justify-center mt-28'>
+			<div className='max-w-md w-full relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg'>
 				<img
 					src={product.image}
 					alt={product.title}
 					className='h-60 w-full object-contain mb-4'
 				/>
-				<div className='bg-gray-200 px-2 py-1 rounded-lg text-gray-800 inline-block mb-4'>
+				<div className='bg-blue-200 absolute -top-1 -right-1 px-2 py-1 rounded-lg text-gray-800 inline-block mb-4'>
 					{product.category}
 				</div>
 				<h1 className='text-2xl font-bold mb-2'>{product.title}</h1>
@@ -64,7 +64,7 @@ export default function BuyPage() {
 				</span>
 				<button
 					onClick={handleBuy}
-					className='bg-green-600 text-white px-6 py-3 w-full rounded-lg hover:bg-green-700'>
+					className='bg-darksecoundry text-white px-6 py-3 w-full rounded-lg hover:bg-darkprimary'>
 					Confirm Purchase
 				</button>
 			</div>

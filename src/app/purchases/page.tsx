@@ -2,13 +2,15 @@
 
 import { ProductType } from '@/src/components/CardBox';
 import { usePurchase } from '../context/PurchaseContext';
+import { useTranslation } from 'react-i18next';
 
 export default function PurchasesPage() {
+	const { t } = useTranslation();
 	const { purchases } = usePurchase();
 
 	return (
 		<div className='container mx-auto p-8 my-10 mt-28'>
-			<h1 className='text-3xl font-bold mb-8 text-center'>My Purchases</h1>
+			<h1 className='text-3xl font-bold mb-8 text-center'>{t('Purchases')}</h1>
 
 			{purchases.length === 0 ? (
 				<p className='text-center text-gray-500'>

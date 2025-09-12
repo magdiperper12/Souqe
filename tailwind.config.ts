@@ -10,12 +10,12 @@ const config: Config = {
 		extend: {
 			colors: {
 				primary: '#F7F7F7',
-				secoundry: '#FFD8A9',
-				third: '#F1A661',
-				forth: '#E38B29',
+				secoundry: '#96EFFF',
+				third: '#5FBDFF',
+				forth: '#7B66FF',
 				darkprimary: '#000000',
-				darksecoundry: '#854836',
-				darkthird: '#FFB22C',
+				darksecoundry: '#4E4FEB',
+				darkthird: '#068FFF',
 				darkforth: '#F7F7F7',
 			},
 			animation: {

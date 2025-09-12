@@ -17,7 +17,7 @@
 	box-sizing: border-box;
 	margin: 0%;
 	padding: 0%;
-	user-select: none;
+
 	/* user-select: none; */
 }
 
@@ -60,7 +60,7 @@ body {
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-	background-color: #aab121; /* forth */
+	background-color: #3ce2ff; /* forth */
 	border-radius: 50%;
 }
 
@@ -69,6 +69,6 @@ body {
 }
 
 .dark .custom-scroll::-webkit-scrollbar-thumb {
-	background-color: #ffff00; /* darkthird */
+	background-color: #00d9ff; /* darkthird */
 	border-radius: 50%;
 }

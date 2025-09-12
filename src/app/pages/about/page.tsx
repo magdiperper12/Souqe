@@ -1,40 +1,37 @@
+'use client';
 import HeroImage from '@/src/components/Hero';
 import Image from 'next/image';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaTshirt, FaShoppingBag, FaLeaf } from 'react-icons/fa';
 
 const AboutPage = () => {
+	const { t } = useTranslation();
 	return (
 		<div>
 			<HeroImage
 				image='/image/shop1.jpg'
-				name='Magdi Fashion'
-				item1='أحدث صيحات الموضة'
-				item2='ملابس عصرية'
-				item3='تصاميم أنيقة'
+				name={t('About')}
+				item1={t('productPage')}
+				item2={t('Contact')}
+				item3={t('shopNow')}
 			/>
 
-			<div className='bg-Background text-gray-800 lg:mt-16 dark:bg-darkBackground dark:text-darkPrimaryTextColors py-20 space-y-20'>
+			<div className='bg-Background text-darkprimary dark:text-darkforth lg:mt-16 dark:bg-darkBackground dark:text-darkPrimary dark:text-darkforthTextColors py-20 space-y-20'>
 				{/* Section: Mission */}
 				<section className='text-center space-y-10'>
-					<h1 className='text-3xl md:text-5xl font-bold text-PrimaryTextColors'>
-						رسالتنا
-					</h1>
+					<h1 className='text-3xl md:text-5xl font-bold '>{t('ourMessage')}</h1>
 					<div className='flex justify-center'>
 						<Image
 							src='/image/shop2.jpg'
-							alt='صورة المحل'
+							alt={t('storeImage')}
 							width={300}
 							height={300}
 							className='object-cover rounded-lg'
 						/>
 					</div>
-					<p className='max-w-4xl mx-auto leading-loose text-lg'>
-						في <span className='font-bold'>Magdi Fashion</span> نؤمن أن الأناقة
-						هي أسلوب حياة، لذلك نحرص على تقديم أفضل تشكيلات الملابس العصرية
-						للرجال والنساء بجودة عالية وأسعار مناسبة. هدفنا هو أن يجد كل عميل
-						إطلالة تعكس شخصيته وتزيد من ثقته بنفسه، مع التزامنا بتجربة تسوق
-						ممتعة ومميزة.
+					<p className='max-w-4xl mx-auto leading-loose text-lg px-5 '>
+						{t('ourMessageDesc')}
 					</p>
 				</section>
 
@@ -48,8 +45,8 @@ const AboutPage = () => {
 									className='text-PrimaryTextColors mx-auto mb-4'
 								/>
 							),
-							title: 'رؤيتنا',
-							desc: 'أن نصبح الوجهة الأولى لعشاق الموضة في المنطقة من خلال توفير ملابس تناسب جميع الأذواق والفئات العمرية.',
+							title: t('ourVision'),
+							desc: t('ourVisionDesc'),
 						},
 						{
 							icon: (
@@ -58,8 +55,8 @@ const AboutPage = () => {
 									className='text-PrimaryTextColors mx-auto mb-4'
 								/>
 							),
-							title: 'أهدافنا',
-							desc: 'تقديم تجربة تسوق متكاملة، تجمع بين الجودة العالية، التصميم العصري، والخدمة المتميزة.',
+							title: t('ourGoals'),
+							desc: t('ourGoalsDesc'),
 						},
 						{
 							icon: (
@@ -68,18 +65,20 @@ const AboutPage = () => {
 									className='text-PrimaryTextColors mx-auto mb-4'
 								/>
 							),
-							title: 'الاستدامة',
-							desc: 'نلتزم باستخدام خامات صديقة للبيئة والعمل مع موردين يهتمون بالمسؤولية الاجتماعية والبيئية.',
+							title: t('sustainability'),
+							desc: t('sustainabilityDesc'),
 						},
 					].map((item, idx) => (
 						<div
 							key={idx}
-							className='p-6 border rounded-xl shadow hover:shadow-lg transition duration-300'>
+							className='p-6 border rounded-xl shadow hover:shadow-lg transition duration-300 text-darksecoundry dark:text-darkthird'>
 							{item.icon}
-							<h3 className='text-xl font-semibold text-PrimaryTextColors mb-2'>
+							<h3 className='text-xl font-semibold text-PrimaryTextColors mb-2 text-darkprimary dark:text-darkforth'>
 								{item.title}
 							</h3>
-							<p className='text-sm leading-relaxed'>{item.desc}</p>
+							<p className='text-sm leading-relaxed  text-darkprimary dark:text-darkforth'>
+								{item.desc}
+							</p>
 						</div>
 					))}
 				</section>
@@ -90,17 +89,17 @@ const AboutPage = () => {
 						{
 							image: '/image/shop1.jpg',
 							title: '+500',
-							desc: 'قطعة ملابس متنوعة في مجموعتنا',
+							desc: t('clothingPiece'),
 						},
 						{
 							image: '/image/shop4.jpg',
 							title: '+20',
-							desc: 'موظف لخدمتك بأفضل صورة',
+							desc: t('employeeService'),
 						},
 						{
 							image: '/image/shop2.jpg',
-							title: '10 سنوات',
-							desc: 'خبرة في مجال الأزياء والموضة',
+							title: t('exyear'),
+							desc: t('experienceYears'),
 						},
 					].map((stat, idx) => (
 						<div
@@ -113,7 +112,7 @@ const AboutPage = () => {
 								height={100}
 								className='h-28 w-28 object-cover rounded-full'
 							/>
-							<h3 className='text-2xl font-bold text-PrimaryTextColors'>
+							<h3 className='text-2xl font-bold text-darksecoundry dark:text-darkthird'>
 								{stat.title}
 							</h3>
 							<p>{stat.desc}</p>

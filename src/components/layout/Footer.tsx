@@ -18,36 +18,30 @@ const Footer = () => {
 	if (hideFooter) return null;
 
 	return (
-		<motion.footer
-			className='bg-darkforth py-16 dark:bg-darkprimary text-darksecoundry dark:text-third pt-12 pb-6 px-6 md:px-16'
-			initial={{ opacity: 0, y: 50 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true }}
-			transition={{ duration: 0.6 }}>
+		<footer className='bg-blue-50 py-16 dark:bg-darkprimary text-darksecoundry dark:text-third pt-12 pb-6 px-6 md:px-16'>
 			<div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10'>
 				{/* Company Info */}
 				<div>
-					<h2 className='text-2xl font-bold mb-4 text-darkthird dark:text-third'>
-						{t('footerTitle')}
-					</h2>
+					<div className='text-4xl mb-4 font-extrabold bg-gradient-to-tr from-darkprimary to-darkthird dark:from-darksecoundry dark:to-darkforth  bg-clip-text text-transparent'>
+						{t('Souq')}
+					</div>
 					<div className='text-sm leading-6 text-darkprimary dark:text-darkforth'>
-						<span className='text-darkthird dark:text-third'>TOKEN</span>{' '}
-						{t('footerDesc')}
+						{t('ourVisionDesc')}
 					</div>
 				</div>
 
 				{/* Quick Links */}
 				<div className='grid grid-cols-2 '>
 					<div>
-						<h3 className='text-lg font-semibold mb-4 text-third dark:text-white'>
+						<h3 className='text-lg font-semibold mb-4 text-darkprimary dark:text-primary'>
 							{t('quickLinks')}
 						</h3>
 						<ul className='space-y-2 text-sm'>
 							{[
-								{ label: t('quickHome'), href: '/' },
-								{ label: t('quickAbout'), href: '/about' },
-								{ label: t('quickServices'), href: '/services' },
-								{ label: t('quickContact'), href: '/contact' },
+								{ label: t('Home'), href: '/' },
+								{ label: t('About'), href: '/pages/about' },
+								{ label: t('Contact'), href: '/pages/contact' },
+								{ label: t('Productsspecial'), href: '/pages/products' },
 							].map(({ label, href }) => (
 								<li key={label}>
 									<Link
@@ -63,15 +57,15 @@ const Footer = () => {
 					{/* Resources */}
 
 					<div>
-						<h3 className='text-lg font-semibold mb-4 text-third dark:text-white'>
-							{t('quickResources')}
+						<h3 className='text-lg font-semibold mb-4 text-darkprimary dark:text-primary'>
+							{t('quickLinks')}
 						</h3>
 						<ul className='space-y-2 text-sm'>
 							{[
-								{ label: t('quickCareers'), href: '/careers' },
-								{ label: t('quickBlog'), href: '/blog' },
-								{ label: t('quickPricing'), href: '/pricing' },
-								{ label: t('quickSupport'), href: '/support' },
+								{ label: t('Home'), href: '/' },
+								{ label: t('About'), href: '/pages/about' },
+								{ label: t('Contact'), href: '/pages/contact' },
+								{ label: t('Productsspecial'), href: '/pages/products' },
 							].map(({ label, href }) => (
 								<li key={label}>
 									<Link
@@ -86,13 +80,13 @@ const Footer = () => {
 				</div>
 				{/* Socials */}
 				<div>
-					<h3 className='text-lg font-semibold mb-4 text-third dark:text-white'>
-						{t('followUs')}
+					<h3 className='text-lg font-semibold mb-4 text-darkprimary dark:text-primary'>
+						{t('Contact')}
 					</h3>
 					<div className='flex gap-4 text-lg'>
 						<a
 							href='#'
-							className='hover:text-blue-600 transition-colors'>
+							className='hover:text-darksecoundry transition-colors'>
 							<FaFacebookF />
 						</a>
 						<a
@@ -123,7 +117,7 @@ const Footer = () => {
 				</Link>
 				All rights reserved.
 			</div>
-		</motion.footer>
+		</footer>
 	);
 };
 

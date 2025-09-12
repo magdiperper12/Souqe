@@ -1,48 +1,51 @@
+'use client';
 import HeroImage from '@/src/components/Hero';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
+	const { t } = useTranslation();
 	return (
 		<div>
 			<HeroImage
 				image='/image/shop4.jpg'
-				name='تواصل معنا'
-				item1='محل ملابس عصري'
-				item2='أحدث الصيحات'
-				item3='خدمة عملاء مميزة'
+				name={t('Contact')}
+				item1={t('productDesc')}
+				item2={t('Contact')}
+				item3={t('shopNow')}
 			/>
 			<div className='bg-Background dark:bg-darkBackground min-h-screen py-12 mt-16'>
 				<div className='max-w-7xl mx-auto px-3 md:px-6'>
 					<div className='mt-12 grid grid-cols-1 md:grid-cols-2 gap-12'>
 						{/* Contact Info */}
-						<div className='bg-white dark:bg-[#2A2A2A] p-8 shadow-lg rounded-lg'>
+						<div className='bg-white dark:bg-transparent dark:border-2 border-forth p-8 shadow-lg rounded-lg'>
 							<h3 className='text-2xl font-semibold text-PrimaryTextColors dark:text-darkPrimaryTextColors mb-4'>
-								معلومات الاتصال
+								{t('contactInfo')}
 							</h3>
 							<ul className='space-y-2 flex flex-col items-start text-right text-lg'>
 								<li className='flex items-start gap-2'>
-									<span className='text-lg'> الهاتف</span>
+									<span className='text-lg'> {t('phone')}</span>
 									<a
 										href='tel:+201033903220'
-										className='text-green-700 hover:text-green-800 dark:text-darkButtonColor dark:hover:text-[#FFD366]'>
+										className='text-darksecoundry hover:text-darkprimary dark:text-third dark:hover:text-secoundry'>
 										01033903220
 									</a>
 								</li>
 								<li className='flex items-center gap-2'>
-									<span className='text-lg'>البريد الإلكتروني </span>
+									<span className='text-lg'>{t('email')}</span>
 									<a
 										href='mailto:magdifashion@gmail.com'
-										className='text-blue-600 px-2 hover:text-blue-700 dark:text-darkButtonColor dark:hover:text-[#FFD366]'>
+										className='text-darksecoundry px-2 hover:text-blue-700 dark:text-third dark:hover:text-secoundry'>
 										magdifashion@gmail.com
 									</a>
 								</li>
 								<li className='flex items-center gap-2'>
-									<span className='text-lg'>العنوان</span>
+									<span className='text-lg'>{t('address')}</span>
 									<a
 										href='https://maps.app.goo.gl/NNRmxz7P2J8XnFbp6'
-										className='text-green-700 px-2 hover:text-green-800 dark:text-darkButtonColor dark:hover:text-[#FFD366]'>
-										محل مجدي فاشون - وسط البلد، القاهرة، مصر
+										className='text-darksecoundry  px-2 hover:text-darkprimary dark:text-third dark:hover:text-secoundry'>
+										{t('addressDetails')}
 									</a>
 								</li>
 							</ul>
@@ -52,7 +55,7 @@ const Contact = () => {
 										icon: (
 											<FaFacebookF
 												size={50}
-												className='text-blue-600 hover:bg-blue-600 border-2 border-blue-600 hover:text-white p-2 rounded-md transition-colors duration-300'
+												className='text-darksecoundry hover:bg-darksecoundry border-2 border-darksecoundry hover:text-white p-2 rounded-md transition-colors duration-300'
 											/>
 										),
 										href: 'https://www.facebook.com/',
@@ -83,9 +86,9 @@ const Contact = () => {
 						</div>
 
 						{/* Map Section */}
-						<div className='bg-white dark:bg-[#2A2A2A] p-2 md:p-8 shadow-lg rounded-lg'>
+						<div className='bg-white dark:bg-transparent dark:border-2 border-forth p-2 md:p-8 shadow-lg rounded-lg'>
 							<h3 className='text-2xl font-semibold text-PrimaryTextColors dark:text-darkPrimaryTextColors mb-4'>
-								موقعنا
+								{t('location')}
 							</h3>
 							<div className='w-full h-64 bg-gray-200 dark:bg-gray-700 rounded-lg'>
 								<iframe
