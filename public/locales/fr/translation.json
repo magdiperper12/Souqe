@@ -44,5 +44,8 @@
 	"favorites": "Favoris",
 	"settings": "Paramètres",
 	"noPurchases": "Vous n’avez encore acheté aucun produit.",
-	"Purchases": "Mes Achats"
+	"Purchases": "Mes Achats",
+	"Rate": "Évaluer",
+	"sortPricce": "Trier par Prix",
+	"cancelSort": "Annuler le tri"
 }

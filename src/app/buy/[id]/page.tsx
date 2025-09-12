@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { usePurchase } from '../../context/PurchaseContext';
 import { useRouter, useParams } from 'next/navigation';
 import { notFound } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 interface ProductType {
+	rating: any;
 	id: number;
 	image: string;
 	title: string;
@@ -14,6 +16,7 @@ interface ProductType {
 }
 
 export default function BuyPage() {
+	const { t } = useTranslation();
 	const { addPurchase } = usePurchase();
 	const router = useRouter();
 	const params = useParams(); // 👈 هتجيب params
@@ -43,7 +46,6 @@ export default function BuyPage() {
 
 	if (loading) return <div className='text-center p-8'>Loading...</div>;
 	if (!product) return notFound();
-
 	return (
 		<main className='container mx-auto  p-8 flex justify-center mt-28'>
 			<div className='max-w-md w-full relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg'>
@@ -59,9 +61,12 @@ export default function BuyPage() {
 				<p className='text-gray-600 dark:text-gray-300 mb-4'>
 					{product.description}
 				</p>
-				<span className='text-xl font-semibold mb-4 block'>
-					${product.price}
-				</span>
+				<div className='flex justify-between items-center w-full'>
+					<span className='text-xl font-semibold mb-4 '>${product.price}</span>
+					<span className='text-xl font-semibold mb-4 '>
+						{t('Rate')} : {product.rating.rate} / 5
+					</span>
+				</div>
 				<button
 					onClick={handleBuy}
 					className='bg-darksecoundry text-white px-6 py-3 w-full rounded-lg hover:bg-darkprimary'>

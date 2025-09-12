@@ -2,10 +2,10 @@
 
 import CardBox from '@/src/components/CardBox';
 import React, { useEffect, useState } from 'react';
-import Loading from './Loading/loading';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import NestedLoad from './Loading/NestedLoad';
+import { FaArrowDown } from 'react-icons/fa6';
 
 type Product = {
 	id: number;
@@ -20,9 +20,16 @@ const ProductContainer = () => {
 	const { t } = useTranslation();
 	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState(true);
+
+	// input value the user types immediately
 	const [searchTerm, setSearchTerm] = useState('');
+
+	// debounced value updated 500ms after user stops typing
+	const [debouncedSearch, setDebouncedSearch] = useState('');
+
 	const [categories, setCategories] = useState<string[]>([]);
 	const [selectedCategory, setSelectedCategory] = useState<string>('All');
+	const [sortByPrice, setSortByPrice] = useState(false);
 
 	const pathname = usePathname();
 	const isProductPath = pathname.includes('/products');
@@ -40,6 +47,16 @@ const ProductContainer = () => {
 			});
 	}, []);
 
+	// debounce effect: update debouncedSearch 500ms after last change to searchTerm
+	useEffect(() => {
+		const handler = setTimeout(() => {
+			setDebouncedSearch(searchTerm);
+		}, 500);
+
+		// cleanup if searchTerm changes before 500ms or on unmount
+		return () => clearTimeout(handler);
+	}, [searchTerm]);
+
 	if (loading)
 		return (
 			<div className='text-center'>
@@ -47,10 +64,11 @@ const ProductContainer = () => {
 			</div>
 		);
 
-	const filteredProducts = products.filter((product) => {
+	// فلترة المنتجات — استخدم debouncedSearch بدل searchTerm علشان يتم تطبيق الـ debounce
+	let filteredProducts = products.filter((product) => {
 		const matchesSearch = product.title
 			.toLowerCase()
-			.includes(searchTerm.toLowerCase());
+			.includes(debouncedSearch.toLowerCase());
 		const matchesCategory =
 			selectedCategory === 'All' || product.category === selectedCategory;
 
@@ -61,17 +79,29 @@ const ProductContainer = () => {
 		}
 	});
 
+	// لو الفرز مفعل يتم الترتيب حسب السعر تصاعدياً
+	if (sortByPrice) {
+		filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+	}
+
 	return (
-		<div className='p-10'>
+		<div className='p-6 md:p-10'>
 			{!isProductPath && (
-				<div className='mb-6 flex justify-center'>
+				<div className='mb-6 flex justify-center gap-3'>
 					<input
 						type='text'
 						placeholder={t('searchPlaceholder')}
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className='w-full md:w-1/2 p-3 mb-6  border rounded-lg dark:focus:ring-2 ring-blue-700 dark:bg-blue-100 shadow-sm focus:outline-none  '
+						className='w-full md:w-1/2 p-3 border rounded-lg dark:focus:ring-2 ring-blue-700 dark:bg-blue-100 shadow-sm focus:outline-none'
 					/>
+
+					<button
+						onClick={() => setSortByPrice(!sortByPrice)}
+						className='px-1 md:px-4 py-1 text-nowrap rounded-lg flex justify-between items-center gap-1 md:gap-2 bg-darksecoundry focus:bg-black text-white shadow hover:bg-darkprimary transition'>
+						<FaArrowDown />
+						{sortByPrice ? t('cancelSort') : t('sortPricce')}
+					</button>
 				</div>
 			)}
 
@@ -100,7 +130,7 @@ const ProductContainer = () => {
 							id={product.id}
 							image={product.image}
 							title={product.title}
-							description={product.description}
+							description={''}
 							category={product.category}
 							price={product.price}
 						/>

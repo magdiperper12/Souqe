@@ -44,5 +44,8 @@
 	"favorites": "Favorites",
 	"settings": "Settings",
 	"noPurchases": "You haven’t purchased any products yet.",
-	"Purchases": "My Purchases"
+	"Purchases": "My Purchases",
+	"Rate": "Rate",
+	"sortPricce": "Sort by Price",
+	"cancelSort": "Cancel Sort"
 }

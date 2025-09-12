@@ -43,5 +43,8 @@
 	"purchases": "المشتريات",
 	"settings": "الإعدادات",
 	"noPurchases": "لم تقم بشراء أي منتجات حتى الآن.",
-	"Purchases": "مشترياتي"
+	"Purchases": "مشترياتي",
+	"Rate": "تقييم",
+	"sortPricce": "فرز حسب السعر",
+	"cancelSort": "إلغاء الفرز"
 }
