@@ -65,7 +65,7 @@ const Header = () => {
 
 			<div className='mx-auto mt-10 flex h-16  pt-1 items-center justify-between px-4 sm:px-6 lg:px-8'>
 				<Link href='/'>
-					<div className='text-4xl font-extrabold bg-gradient-to-tr from-darkprimary to-darkthird dark:from-darksecoundry dark:to-darkforth bg-clip-text text-transparent'>
+					<div className='text-4xl font-extrabold lg:bg-gradient-to-tr lg:from-darkprimary lg:to-darkthird lg:dark:from-darksecoundry lg:dark:to-darkforth lg:bg-clip-text lg:text-transparent text-darkprimary dark:text-secoundry'>
 						{t('Souq')}
 					</div>
 				</Link>

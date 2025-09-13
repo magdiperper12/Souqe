@@ -22,7 +22,7 @@ const Footer = () => {
 		<footer className='bg-blue-50 py-16 dark:bg-darkprimary text-blue-800 dark:text-third pt-12 pb-6 px-6 md:px-16'>
 			<div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10'>
 				<div>
-					<div className='text-4xl mb-4 font-extrabold bg-gradient-to-tr from-darkprimary to-darkthird dark:from-darksecoundry dark:to-darkforth  bg-clip-text text-transparent'>
+					<div className='text-4xl mb-4 font-extrabold lg:bg-gradient-to-tr lg:from-darkprimary lg:to-darkthird lg:dark:from-darksecoundry lg:dark:to-darkforth lg:bg-clip-text lg:text-transparent text-darkprimary dark:text-secoundry'>
 						{t('Souq')}
 					</div>
 					<div className='text-sm leading-6 text-darkprimary dark:text-darkforth'>
