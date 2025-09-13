@@ -69,7 +69,6 @@ const Header = () => {
 						{t('Souq')}
 					</div>
 				</Link>
-				{/* large screen Navigation */}
 				<nav className='hidden lg:flex items-center gap-6  font-bold text-xl'>
 					{navLinks.map((link, i) => (
 						<motion.div
@@ -111,7 +110,7 @@ const Header = () => {
 							/>
 						</Link>
 					</div>
-					{/* Mobile Menu Close , open  Button */}
+
 					<button
 						className='lg:hidden  p-2 text-darkprimary text-2xl dark:text-primary'
 						onClick={() => setIsOpen(!isOpen)}>
@@ -128,7 +127,6 @@ const Header = () => {
 				</div>
 			</div>
 
-			{/* Mobile Menu */}
 			<AnimatePresence>
 				{isOpen && (
 					<motion.nav

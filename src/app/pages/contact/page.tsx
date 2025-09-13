@@ -37,7 +37,6 @@ const Contact = () => {
 				</section>
 				<div className='max-w-7xl mx-auto px-6'>
 					<div className='mt-12 grid grid-cols-1 md:grid-cols-2 gap-12'>
-						{/* Contact Info */}
 						<div className='bg-white dark:bg-transparent dark:border-2 border-forth p-4 md:p-8 shadow-lg rounded-lg'>
 							<h3 className='text-2xl font-semibold text-PrimaryTextColors dark:text-darkPrimaryTextColors mb-4'>
 								{t('contactInfo')}
@@ -104,7 +103,6 @@ const Contact = () => {
 							</div>
 						</div>
 
-						{/* Map Section */}
 						<div className='bg-white dark:bg-transparent dark:border-2 border-forth p-2 md:p-8 shadow-lg rounded-lg'>
 							<h3 className='text-2xl font-semibold text-PrimaryTextColors dark:text-darkPrimaryTextColors mb-4'>
 								{t('location')}

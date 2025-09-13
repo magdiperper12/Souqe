@@ -21,7 +21,6 @@ const Daf3Page = () => {
 				<form
 					onSubmit={handleSubmit}
 					className='bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md space-y-5 text-right transition-colors duration-300'>
-					{/* البريد أو رقم الهاتف */}
 					<div>
 						<input
 							type='text'
@@ -43,7 +42,6 @@ const Daf3Page = () => {
 						</div>
 					</div>
 
-					{/* عنوان التوصيل */}
 					<h2 className='text-lg sm:text-xl font-semibold text-blue-900 dark:text-blue-100'>
 						{t('shippingAddress')}
 					</h2>
@@ -108,7 +106,6 @@ const Daf3Page = () => {
 						/>
 					</div>
 
-					{/* خيارات إضافية */}
 					<div className='space-y-2'>
 						<div className='flex items-center gap-2'>
 							<input
@@ -124,7 +121,6 @@ const Daf3Page = () => {
 						</div>
 					</div>
 
-					{/* تفاصيل الشحن */}
 					<div>
 						<label className='block mb-2 font-medium text-blue-900 dark:text-blue-100'>
 							{t('shippingDetails')}
@@ -139,7 +135,6 @@ const Daf3Page = () => {
 						</div>
 					</div>
 
-					{/* وسيلة الدفع */}
 					<div>
 						<h2 className='text-lg sm:text-xl font-semibold mb-3 text-blue-900 dark:text-blue-100'>
 							{t('paymentMethod')}
@@ -167,7 +162,6 @@ const Daf3Page = () => {
 						</div>
 					</div>
 
-					{/* زر التنفيذ */}
 					<button
 						type='submit'
 						className='w-full mt-6 py-3 bg-darksecoundry hover:bg-black text-white text-lg font-semibold rounded-lg transition-colors duration-300'>

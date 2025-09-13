@@ -14,7 +14,6 @@ interface ProductType {
 	category: string;
 }
 
-// منتج مع الكمية
 interface PurchaseProductType extends ProductType {
 	quantity: number;
 }
@@ -31,7 +30,6 @@ export default function BuyPage() {
 	const [loading, setLoading] = useState(true);
 	const [quantity, setQuantity] = useState<number>(1);
 
-	// تحميل المنتج الأساسي
 	useEffect(() => {
 		if (!id) return;
 		setLoading(true);
@@ -40,7 +38,7 @@ export default function BuyPage() {
 			.then((data) => {
 				setProduct(data);
 				setLoading(false);
-				// بعد تحميل المنتج الأساسي نجيب المنتجات المشابهة
+
 				fetch(`https://fakestoreapi.com/products/category/${data.category}`)
 					.then((res) => res.json())
 					.then((similar) => {
@@ -62,15 +60,12 @@ export default function BuyPage() {
 			router.push('/purchases');
 		}
 	};
-
-	// تبديل المنتج الأساسي مع المنتج اللي في القائمة
 	const handleSwapProduct = (clickedProduct: ProductType) => {
 		if (!product) return;
-		// المنتج اللي فوق ينزل تحت مكان اللي اتضغط عليه
+
 		setSimilarProducts((prev) =>
 			prev.map((p) => (p.id === clickedProduct.id ? product : p))
 		);
-		// المنتج اللي اتضغط عليه يطلع فوق
 		setProduct(clickedProduct);
 		setQuantity(1);
 	};
@@ -80,7 +75,6 @@ export default function BuyPage() {
 
 	return (
 		<main className='container mx-auto p-8 flex flex-col gap-10 mt-28'>
-			{/* المنتج الأساسي */}
 			<div className='max-w-md mx-auto w-full relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg'>
 				<img
 					src={product.image}
@@ -123,7 +117,6 @@ export default function BuyPage() {
 				</div>
 			</div>
 
-			{/* قائمة المنتجات المشابهة */}
 			{similarProducts.length > 0 && (
 				<div className='w-full my-10'>
 					<div className='flex gap-4 overflow-x-auto pb-4 scrollbar-thin   w-3/4 m-auto'>

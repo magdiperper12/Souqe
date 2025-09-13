@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Lang from '@/src/components/theme/LanguageSwitcher';
 import { usePurchase } from '../../context/PurchaseContext';
 
-// ✅ ProductType مع quantity
 type ProductType = {
 	id: number;
 	title: string;
@@ -51,7 +50,6 @@ export default function ProfilePage() {
 					</div>
 				</div>
 
-				{/* الاسم والبريد والموقع */}
 				<div className='mt-20 text-center'>
 					<h1 className='text-3xl font-bold text-gray-900 dark:text-gray-100'>
 						{t('userName')}
@@ -62,7 +60,6 @@ export default function ProfilePage() {
 					<p className='text-gray-500 text-sm mt-1'>{t('userLocation')}</p>
 				</div>
 
-				{/* التبويبات */}
 				<div className='flex justify-center gap-6 border-b border-gray-300 dark:border-gray-700 mt-8 pb-2'>
 					<button
 						onClick={() => setActiveTab('purchases')}
@@ -84,7 +81,6 @@ export default function ProfilePage() {
 					</button>
 				</div>
 
-				{/* محتوى التبويب */}
 				<div className='mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition-colors duration-300'>
 					{activeTab === 'purchases' ? (
 						<>

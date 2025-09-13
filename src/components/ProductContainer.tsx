@@ -47,13 +47,11 @@ const ProductContainer = () => {
 			});
 	}, []);
 
-	// debounce effect: update debouncedSearch 500ms after last change to searchTerm
 	useEffect(() => {
 		const handler = setTimeout(() => {
 			setDebouncedSearch(searchTerm);
 		}, 500);
 
-		// cleanup if searchTerm changes before 500ms or on unmount
 		return () => clearTimeout(handler);
 	}, [searchTerm]);
 
@@ -64,7 +62,6 @@ const ProductContainer = () => {
 			</div>
 		);
 
-	// فلترة المنتجات — استخدم debouncedSearch بدل searchTerm علشان يتم تطبيق الـ debounce
 	let filteredProducts = products.filter((product) => {
 		const matchesSearch = product.title
 			.toLowerCase()
@@ -79,7 +76,6 @@ const ProductContainer = () => {
 		}
 	});
 
-	// لو الفرز مفعل يتم الترتيب حسب السعر تصاعدياً
 	if (sortByPrice) {
 		filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
 	}

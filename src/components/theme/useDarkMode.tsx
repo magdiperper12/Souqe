@@ -2,10 +2,9 @@
 import { useEffect, useState } from 'react';
 
 const useDarkMode = () => {
-	const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // قيمة افتراضية
+	const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
 	useEffect(() => {
-		// تحديث القيمة بناءً على localStorage بعد تحميل الكلاينت
 		const saved = localStorage.getItem('isDarkMode') === 'true';
 		setIsDarkMode(saved);
 	}, []);

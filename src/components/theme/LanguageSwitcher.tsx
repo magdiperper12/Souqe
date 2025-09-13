@@ -9,7 +9,6 @@ export default function Lang() {
 		i18n.changeLanguage(lang);
 	};
 
-	// تغيير الاتجاه بناءً على اللغة
 	useEffect(() => {
 		if (typeof document !== 'undefined') {
 			document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';

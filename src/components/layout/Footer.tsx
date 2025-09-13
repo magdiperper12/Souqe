@@ -30,7 +30,6 @@ const Footer = () => {
 					</div>
 				</div>
 
-				{/* Quick Links */}
 				<div className='grid grid-cols-2 '>
 					<div>
 						<h3 className='text-lg font-semibold mb-4 text-darkprimary dark:text-primary'>

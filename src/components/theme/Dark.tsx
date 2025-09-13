@@ -8,10 +8,10 @@ const Dark: React.FC = () => {
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
-		setMounted(true); // بعد تحميل الكلاينت
+		setMounted(true);
 	}, []);
 
-	if (!mounted) return null; // تمنع render قبل ما الكلاينت يشتغل
+	if (!mounted) return null;
 
 	return (
 		<div className='text-nowrap'>
