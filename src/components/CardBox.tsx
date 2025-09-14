@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 export interface ProductType {
 	id: number;
@@ -19,6 +20,7 @@ const CardBox = ({
 	price,
 	category,
 }: ProductType) => {
+	const { t } = useTranslation();
 	const router = useRouter();
 
 	return (
@@ -42,7 +44,7 @@ const CardBox = ({
 				<button
 					onClick={() => router.push(`/buy/${id}`)}
 					className='bg-darksecoundry text-white px-4 py-2 rounded-lg hover:bg-darkprimary'>
-					Buy
+					{t('buy')}
 				</button>
 			</div>
 		</div>

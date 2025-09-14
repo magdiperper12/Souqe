@@ -21,10 +21,8 @@ const ProductContainer = () => {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState(true);
 
-	// input value the user types immediately
 	const [searchTerm, setSearchTerm] = useState('');
 
-	// debounced value updated 500ms after user stops typing
 	const [debouncedSearch, setDebouncedSearch] = useState('');
 
 	const [categories, setCategories] = useState<string[]>([]);
